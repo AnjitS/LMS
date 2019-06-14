@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-cyan.css">
+<body>
+<div class="w3-container w3-text-theme" align="center">
+    <h2 align="center">DASHBOARD</h2>
+</div>
+<div align="center">
+<font size="7" face="calibri">Employee Dashboard: Section</font><br><br><br><br>
+   <div class="w3-half">
+            <app-my-details></app-my-details>
+    </div>
+    <div class="w3-half">
+            <app-my-manager-details></app-my-manager-details>    
+    </div><br><br>
+    <div>
+        <app-leave-history></app-leave-history>
+    </div>
+    <br><br>
+    <button (click)="pending()" style="height: 100px;width: 600px">
+        <font>My Reporting employee's Pending Leave Application</font>
+    </button><br><br>
+</div> 
+</body>
+</html>

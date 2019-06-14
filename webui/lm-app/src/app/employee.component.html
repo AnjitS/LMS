@@ -1,0 +1,59 @@
+<html>
+        <title>W3.CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body>
+                <div class="w3-container" align="center">
+                        <h2>LEAVE MANAGER</h2>
+                        <p>Click on the corresponding login button.</p>
+                        <table class="w3-table-all">
+                            <thead>
+                                <tr class="w3-cyan">
+                                    <th>Employee ID</th>
+                                    <th>Employee Name</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
+                                    <th>Date of Joining</th>
+                                    <th>Department</th>
+                                    <th>Manager ID</th>
+                                    <th>Leave Balance</th>
+                                    <th>LOGIN</th>
+                                </tr>
+                            </thead>
+                            <tbody class="employees">
+                                <tr *ngFor="let employee of employees">
+                                    <td>
+                                        <h5>{{employee.empId}}</h5>
+                                    </td>
+                                    <td>
+                                        <h5>{{employee.empName}}</h5>
+                                    </td>
+                                    <td>
+                                        <h5>{{employee.empEmailId}}</h5>
+                                    </td>
+                                    <td>
+                                        <h5>{{employee.empMobNo}}</h5>
+                                    </td>
+                                    <td>
+                                        <h5>{{employee.empDoj}}</h5>
+                                    </td>
+                                    <td>
+                                        <h5>{{employee.empDept}}</h5>
+                                    </td>
+                                    <td>
+                                        <h5>{{employee.empMgrId}}</h5>
+                                    </td>
+                                    <td>
+                                        <h5>{{employee.empLeaveBalance}}</h5>
+                                    </td>
+                                    <td>
+                                        <button class="w3-btn w3-pale-red" (click)="onLogin(employee)">Login</button>
+                                    </td>                
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+        </body>
+
+
+</html>

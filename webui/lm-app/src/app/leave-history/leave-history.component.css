@@ -1,0 +1,22 @@
+table {
+    font-style: oblique;
+    border-style: inset;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid rgba(235, 228, 241, 0.85);
+    border-radius: 6px;
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    background-color: cornsilk;
+}
+
+
+
+button {
+    size: 50px;
+    background-color:teal;
+    color:#FFFFFF;
+    font-size: 16px;
+    height: 50px;
+    width: 140px;
+  }

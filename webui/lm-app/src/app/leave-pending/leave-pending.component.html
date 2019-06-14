@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+
+<title>W3.CSS</title>
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1">
+
+<link
+rel="stylesheet"
+href="https://www.w3schools.com/w3css/4/w3.css">
+
+<link
+rel="stylesheet"
+href="https://www.w3schools.com/lib/w3-theme-cyan.css">
+
+<body>
+    <div align="center"
+    class="w3-container">
+    <header
+    class="w3-cyan">
+    <h1>My Reporting Employees Pending Leave Applications</h1>
+    </header>
+    <div style="text-align:center">
+    </div>
+<div class="employees" *ngFor= 'let e of employees'>
+<ng-container *ngIf='e.empMgrId==empId'>
+<table class="highlight" align="center" border ="1" width="center">
+    <tr class="empcol"> 
+        <th bgcolor="4A7AE5">Employee ID</th>
+        <th>{{e.empId}}</th>
+        <th bgcolor="4A7AE5">Employee Name</th>
+        <th>{{e.empName}}</th>
+        <th bgcolor="4A7AE5">Employee Leave Balance</th>
+        <th>{{e.empLeaveBalance}}</th>
+    </tr>
+    <tr bgcolor="4A7AE5">
+        <th>Leave ID</th>
+        <th>Number Of Days</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Leave Type</th>
+        <th>Status</th>
+        <th>Reason</th>
+    </tr>
+    <tr *ngFor="let lea of levdata;let i = index" 
+    (click)="setClickedRow(i,lea)" [class.highlight]="i == selectedRow" [class.highlight]="lea==selectedRow2">
+    <ng-container *ngIf='lea.empId==e.empId'>
+        <td>{{lea.levId}}</td>
+        <td>{{lea.levNoOfDays}}</td>
+        <td>{{lea.levStartDate}}</td>
+        <td>{{lea.levEndDate}}</td>
+        <td>{{lea.levType}}</td>
+        <td>{{lea.levStatus}}</td>
+        <td>{{lea.levReason}}</td>
+    </ng-container>
+</tr>
+</table>
+</ng-container>
+</div><br>
+<div style="text-align:center">
+    <button class="w3-table-all"[disabled]="isDisabled" (click) = "appDeny()">Approve/Deny</button>
+    <div class="well well-lg">
+        Selected Row : <strong>{{selectedRow}}</strong>
+    </div>
+</div>

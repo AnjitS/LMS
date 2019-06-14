@@ -1,0 +1,55 @@
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+    <div class="w3-card-4">
+    <div class="w3-container w3-cyan">
+  <h2 align="center">Approve Deny Leave</h2><br><br>
+</div>
+</div>
+</body></html>
+
+<form #approveleaveForm = "ngForm">
+    <br><br>
+    <label class="w3-text-cyan"><b> Employee ID :</b></label>
+    <input type="number" name="empId" [(ngModel)]="leaveData.empId">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+    <label class="w3-text-cyan"><b> Start Date : </b></label>
+    <input type="date" name="levStartDate" [(ngModel)]="leaveData.levStartDate"><br><br>
+
+    <label class="w3-text-cyan"><b>  Employee Name: </b></label>
+    <input type="text" name="empName" [(ngModel)]="details.empName">&emsp;&emsp;&emsp;&emsp;&emsp;
+
+    <label class="w3-text-cyan"><b> End Date : </b></label>
+    <input type="date" name="levEndDate" [(ngModel)]="leaveData.levEndDate"><br><br>
+  
+    <label class="w3-text-cyan"><b> Leave Balance : </b></label>
+    <input type="number" name="empLeaveBalance" [(ngModel)]="details.empLeaveBalance">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  
+    <label class="w3-text-cyan"><b> Number of Days : </b></label>
+    <input type="number" name="levNoOfDays" [(ngModel)]="leaveData.levNoOfDays"><br><br>
+  
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+    <label class="w3-text-cyan"><b> Leave Type : </b></label>
+    <input type="text" name="levType" [(ngModel)]="leaveData.levType"><br><br>
+
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+    <label class="w3-text-cyan"><b> Leave Reason : </b></label>
+    <input type="text" name="levReason" [(ngModel)]="leaveData.levReason"><br><br>
+  
+    <label class="w3-text-cyan"><b>  Comments :  </b></label>
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <input type="text" style="height:75px;" name="levMgrComments" #levMgrComments="ngModel" ngModel required><br><br>
+    
+    <span *ngIf="levMgrComments.invalid && levMgrComments.untouched">enter the comments for deny</span>
+    
+    <button (click)="Approve(approveleaveForm.value)">Approve</button>
+    <button (click)="onDeny(approveleaveForm.value)" [disabled]="levMgrComments.invalid">Deny</button>
+    <button (click)="onCancel(approveleaveForm.value)">Cancel</button>
+</form>
+

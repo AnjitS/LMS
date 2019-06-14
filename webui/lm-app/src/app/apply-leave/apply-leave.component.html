@@ -1,0 +1,48 @@
+ 
+<html>
+        <title>W3.CSS</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <body>
+            <div class="w3-card-4">
+                <div class="w3-container w3-cyan">
+                    <h2>APPLY LEAVE</h2>
+                </div>
+                <form class="w3-container" #applyForm="ngForm" (ngSubmit)="onApply(applyForm.value)">
+                  <br>
+                  <label class="w3-text-cyan"><b>Employee ID:</b></label><input class="w3-input w3-border w3-sand" type="number" name="empId" ngModel [(ngModel)]="empId" vlaue="empId" readonly>
+                  <br>
+        
+                  <br>
+                  <label class="w3-text-cyan"><b>Apply date:</b></label><input class="w3-input w3-border w3-sand" type="date" name="levAppliedOn" ngModel>
+                  <br>
+                  
+                  <br>
+                  <label class="w3-text-cyan"><b>Start Date:</b></label><input class="w3-input w3-border w3-sand" type="date" name="levStartDate" ngModel>
+                  <br>
+                  
+                  <br>
+                  <label class="w3-text-cyan"><b>End Date:</b></label><input class="w3-input w3-border w3-sand" type="date" name="levEndDate" ngModel>
+                  <br>
+                  
+                  <br>
+                  <label class="w3-text-cyan"><b>No. of days:</b></label><input class="w3-input w3-border w3-sand" type="number" name="levNoOfDays" #levNoOfDays="ngModel" ngModel required levNoOfDays >
+                  <div *ngIf="levNoOfDays.invalid && (levNoOfDays.touched||levNoOfDays.dirty)"><label class="w3-text-red">Number of days is mandatory</label></div>
+                  <br>
+                  
+                  <br>
+                  <label class="w3-text-cyan"><b>Leave Type:</b></label><input class="w3-input w3-border w3-sand" type="text" name="levType" #levType="ngModel" value="EARNEDLEAVE"  ngModel required levType>
+                  <div *ngIf="levType.invalid && (levType.touched||levType.dirty)"><label class="w3-text-red">Leave reason is mandatory</label></div>
+                  <br>
+                  
+                  <br>       
+                  <label class="w3-text-cyan"><b>Leave Reason:</b></label><input class="w3-input w3-border w3-sand" type="text" name="levReason" #levReason="ngModel" ngModel required levReason>
+                  <div *ngIf="levReason.invalid && (levReason.touched||levReason.dirty)"><label class="w3-text-red">Leave reason is mandatory</label></div>
+                  <br>
+        
+                  <input class="w3-btn w3-teal" type="submit" value="Apply">
+                  <button class="w3-btn w3-teal" (click) = "onCancel()">CANCEL</button>
+                </form> 
+            </div>
+        </body>
+        </html>
